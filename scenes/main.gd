@@ -3,9 +3,9 @@ extends Node2D
 const PLAYER = preload("res://objects/player/player.tscn")
 const REMOTE_PLAYER = preload("res://objects/remote_player/remote_player.tscn")
 
-@onready var login: LoginScreen = $CanvasLayer/Screens/Login
-@onready var map_container: Node2D = $Map
-@onready var players: Node2D = $Players
+@onready var login: LoginScreen = $Screens/Login
+@onready var map_container: Node2D = $World/Map
+@onready var players: Node2D = $World/Players
 
 var _map_scene: PackedScene
 var _map: Node2D
@@ -13,11 +13,20 @@ var _player_id: int = -1
 var _player: Player
 
 func _ready() -> void:
+	SignalBus.tcp_disconnected.connect(_on_connection_lost)
+	
 	Network.register_handler(Protocol.MsgLogin, _handle_login)
 	Network.register_handler(Protocol.MsgJoinGame, _handle_join_game)
 	Network.register_handler(Protocol.MsgAddPlayer, _handle_add_player)
 	Network.register_handler(Protocol.MsgRemovePlayer, _handle_remove_player)
 	Network.register_handler(Protocol.MsgMovePlayer, _handle_move_player)
+	
+func _on_connection_lost() -> void:
+	login.visible = true
+	if _map != null:
+		_map.queue_free()
+		_map = null
+	MessageBox.show_error("The connection with the server has been lost.")
 
 func _handle_login(packet: Packet) -> void:
 	var result = packet.get_u8()

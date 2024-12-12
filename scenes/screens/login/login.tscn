@@ -1,22 +1,85 @@
-[gd_scene load_steps=4 format=3 uid="uid://88inp2oe4se2"]
+[gd_scene load_steps=9 format=3 uid="uid://88inp2oe4se2"]
 
+[ext_resource type="Texture2D" uid="uid://bsrdoxaoekcg2" path="res://assets/textures/background/login.png" id="1_bd12f"]
 [ext_resource type="Script" path="res://scenes/screens/login/login.gd" id="1_d6n12"]
 [ext_resource type="Theme" uid="uid://h1f8se6daphe" path="res://assets/themes/default_theme.tres" id="1_qnl5d"]
 [ext_resource type="Texture2D" uid="uid://cwn6q67h64g0e" path="res://assets/textures/ui/window_frame.png" id="2_r84d4"]
+[ext_resource type="Texture2D" uid="uid://btrkypt44wvh" path="res://assets/textures/ui/loading.png" id="5_8bgre"]
 
-[node name="Login" type="NinePatchRect"]
+[sub_resource type="Animation" id="Animation_w0xa7"]
+resource_name = "bounce"
+length = 0.6
+loop_mode = 1
+step = 0.1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.1, 0.2, 0.3, 0.4, 0.5, 0.6),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1),
+"update": 1,
+"values": [0, 1, 2, 3, 4, 5, 5]
+}
+
+[sub_resource type="Animation" id="Animation_ieuhy"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [0]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_cs4bw"]
+_data = {
+"RESET": SubResource("Animation_ieuhy"),
+"bounce": SubResource("Animation_w0xa7")
+}
+
+[node name="Login" type="TextureRect"]
+self_modulate = Color(0.113725, 0.113725, 0.113725, 1)
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("1_bd12f")
+expand_mode = 1
+script = ExtResource("1_d6n12")
+metadata/_edit_lock_ = true
+
+[node name="Dialog" type="NinePatchRect" parent="."]
 custom_minimum_size = Vector2(250, 160)
-offset_right = 14.0
-offset_bottom = 32.0
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -125.0
+offset_top = -80.0
+offset_right = 125.0
+offset_bottom = 80.0
+grow_horizontal = 2
+grow_vertical = 2
 theme = ExtResource("1_qnl5d")
 texture = ExtResource("2_r84d4")
 patch_margin_left = 7
 patch_margin_top = 25
 patch_margin_right = 7
 patch_margin_bottom = 7
-script = ExtResource("1_d6n12")
+metadata/_edit_lock_ = true
 
-[node name="VBox" type="VBoxContainer" parent="."]
+[node name="VBox" type="VBoxContainer" parent="Dialog"]
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
@@ -26,18 +89,19 @@ grow_vertical = 2
 size_flags_horizontal = 3
 size_flags_vertical = 3
 theme_override_constants/separation = 10
+metadata/_edit_lock_ = true
 
-[node name="Title" type="MarginContainer" parent="VBox"]
+[node name="Title" type="MarginContainer" parent="Dialog/VBox"]
 layout_mode = 2
 theme_override_constants/margin_top = 4
 
-[node name="Label" type="Label" parent="VBox/Title"]
+[node name="Label" type="Label" parent="Dialog/VBox/Title"]
 layout_mode = 2
 theme_type_variation = &"TitleLabel"
 text = "Connect To Server"
 horizontal_alignment = 1
 
-[node name="Margin" type="MarginContainer" parent="VBox"]
+[node name="Margin" type="MarginContainer" parent="Dialog/VBox"]
 layout_mode = 2
 size_flags_vertical = 3
 theme_override_constants/margin_left = 10
@@ -45,27 +109,27 @@ theme_override_constants/margin_top = 10
 theme_override_constants/margin_right = 10
 theme_override_constants/margin_bottom = 10
 
-[node name="VBox" type="VBoxContainer" parent="VBox/Margin"]
+[node name="VBox" type="VBoxContainer" parent="Dialog/VBox/Margin"]
 layout_mode = 2
 theme_override_constants/separation = 10
 
-[node name="Server" type="HBoxContainer" parent="VBox/Margin/VBox"]
+[node name="Server" type="HBoxContainer" parent="Dialog/VBox/Margin/VBox"]
 layout_mode = 2
 theme_override_constants/separation = 10
 
-[node name="Label" type="Label" parent="VBox/Margin/VBox/Server"]
+[node name="Label" type="Label" parent="Dialog/VBox/Margin/VBox/Server"]
 custom_minimum_size = Vector2(60, 1.45519e-11)
 layout_mode = 2
 text = "Server"
 horizontal_alignment = 2
 
-[node name="ServerAddr" type="LineEdit" parent="VBox/Margin/VBox/Server"]
+[node name="ServerAddr" type="LineEdit" parent="Dialog/VBox/Margin/VBox/Server"]
 custom_minimum_size = Vector2(80, 1.45519e-11)
 layout_mode = 2
 size_flags_horizontal = 3
 text = "127.0.0.1"
 
-[node name="Port" type="SpinBox" parent="VBox/Margin/VBox/Server"]
+[node name="Port" type="SpinBox" parent="Dialog/VBox/Margin/VBox/Server"]
 custom_minimum_size = Vector2(40, 1.45519e-11)
 layout_mode = 2
 min_value = 1.0
@@ -73,35 +137,56 @@ max_value = 65535.0
 value = 7777.0
 rounded = true
 
-[node name="Name" type="HBoxContainer" parent="VBox/Margin/VBox"]
+[node name="Name" type="HBoxContainer" parent="Dialog/VBox/Margin/VBox"]
 layout_mode = 2
 theme_override_constants/separation = 10
 
-[node name="Label" type="Label" parent="VBox/Margin/VBox/Name"]
+[node name="Label" type="Label" parent="Dialog/VBox/Margin/VBox/Name"]
 custom_minimum_size = Vector2(60, 1.45519e-11)
 layout_mode = 2
 text = "Name
 "
 horizontal_alignment = 2
 
-[node name="CharacterName" type="LineEdit" parent="VBox/Margin/VBox/Name"]
+[node name="CharacterName" type="LineEdit" parent="Dialog/VBox/Margin/VBox/Name"]
 custom_minimum_size = Vector2(140, 1.45519e-11)
 layout_mode = 2
 size_flags_horizontal = 3
 
-[node name="Margin" type="MarginContainer" parent="VBox/Margin/VBox"]
+[node name="Margin" type="MarginContainer" parent="Dialog/VBox/Margin/VBox"]
 layout_mode = 2
 size_flags_vertical = 3
 theme_override_constants/margin_top = 20
 
-[node name="Connect" type="Button" parent="VBox/Margin/VBox/Margin"]
+[node name="Connect" type="Button" parent="Dialog/VBox/Margin/VBox/Margin"]
 layout_mode = 2
 size_flags_vertical = 8
 disabled = true
 text = "Connect
 "
 
-[connection signal="text_changed" from="VBox/Margin/VBox/Server/ServerAddr" to="." method="_line_edit_text_changed"]
-[connection signal="text_changed" from="VBox/Margin/VBox/Name/CharacterName" to="." method="_line_edit_text_changed"]
-[connection signal="text_submitted" from="VBox/Margin/VBox/Name/CharacterName" to="." method="_line_edit_text_submitted"]
-[connection signal="pressed" from="VBox/Margin/VBox/Margin/Connect" to="." method="_on_connect_button_pressed"]
+[node name="Loading" type="ColorRect" parent="Dialog"]
+visible = false
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0, 0, 0, 0.34902)
+
+[node name="Sprite" type="Sprite2D" parent="Dialog/Loading"]
+position = Vector2(125, 113)
+scale = Vector2(0.5, 0.5)
+texture = ExtResource("5_8bgre")
+hframes = 6
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="Dialog/Loading"]
+libraries = {
+"": SubResource("AnimationLibrary_cs4bw")
+}
+
+[connection signal="text_changed" from="Dialog/VBox/Margin/VBox/Server/ServerAddr" to="." method="_line_edit_text_changed"]
+[connection signal="text_changed" from="Dialog/VBox/Margin/VBox/Name/CharacterName" to="." method="_line_edit_text_changed"]
+[connection signal="text_submitted" from="Dialog/VBox/Margin/VBox/Name/CharacterName" to="." method="_line_edit_text_submitted"]
+[connection signal="pressed" from="Dialog/VBox/Margin/VBox/Margin/Connect" to="." method="_on_connect_button_pressed"]

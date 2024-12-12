@@ -1,11 +1,14 @@
-extends NinePatchRect
+extends TextureRect
 
 class_name LoginScreen
 
-@onready var c_server_addr: LineEdit = $VBox/Margin/VBox/Server/ServerAddr
-@onready var c_port: SpinBox = $VBox/Margin/VBox/Server/Port
-@onready var c_character_name: LineEdit = $VBox/Margin/VBox/Name/CharacterName
-@onready var c_connect: Button = $VBox/Margin/VBox/Margin/Connect
+@onready var animation_player: AnimationPlayer = $Dialog/Loading/AnimationPlayer
+
+@onready var c_server_addr: LineEdit = $Dialog/VBox/Margin/VBox/Server/ServerAddr
+@onready var c_port: SpinBox = $Dialog/VBox/Margin/VBox/Server/Port
+@onready var c_character_name: LineEdit = $Dialog/VBox/Margin/VBox/Name/CharacterName
+@onready var c_connect: Button = $Dialog/VBox/Margin/VBox/Margin/Connect
+@onready var c_loading: ColorRect = $Dialog/Loading
 
 func _is_valid_server_addr() -> bool:
 	var server = c_server_addr.text
@@ -39,8 +42,15 @@ func _on_connect_button_pressed() -> void:
 	var port = c_port.value
 	var character_name = c_character_name.text
 	
-	Network.connect_to_server(server, port)
+	animation_player.play("bounce")
 	
-	await SignalBus.tcp_connected
+	c_loading.visible = true
 	
-	Protocol.send_login(character_name)
+	var connected = await Network.connect_to_server(server, port)
+	
+	c_loading.visible = false
+	
+	if not connected:
+		MessageBox.show_error("Unable to connect to the game server.")
+	else:
+		Protocol.send_login(character_name)

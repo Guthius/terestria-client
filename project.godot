@@ -21,6 +21,7 @@ Constants="*res://scripts/singletons/constants.gd"
 Network="*res://scripts/singletons/network.gd"
 SignalBus="*res://scripts/singletons/signalbus.gd"
 Protocol="*res://scripts/singletons/protocol.gd"
+MessageBox="*res://scripts/singletons/message_box.gd"
 
 [debug]
 
@@ -71,4 +72,3 @@ interact={
 [rendering]
 
 textures/canvas_textures/default_texture_filter=0
-environment/defaults/default_clear_color=Color(0, 0, 0, 1)

@@ -13,7 +13,7 @@ func _ready() -> void:
 	paperdoll.attack_finished.connect(_enable_input)
 	paperdoll.set_direction(_direction)
 
-func _physics_process(delta: float) -> void:
+func _physics_process(_delta: float) -> void:
 	if not _allow_input:
 		return
 	

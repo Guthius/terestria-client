@@ -6,23 +6,26 @@
 [node name="Main" type="Node2D"]
 script = ExtResource("1_cqj3t")
 
-[node name="Map" type="Node2D" parent="."]
+[node name="Background" type="CanvasLayer" parent="."]
 
-[node name="Players" type="Node2D" parent="."]
-
-[node name="CanvasLayer" type="CanvasLayer" parent="."]
-scale = Vector2(2, 2)
-transform = Transform2D(2, 0, 0, 2, 0, 0)
-
-[node name="Screens" type="CenterContainer" parent="CanvasLayer"]
+[node name="ColorRect" type="ColorRect" parent="Background"]
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
-offset_right = -576.0
-offset_bottom = -324.0
 grow_horizontal = 2
 grow_vertical = 2
+color = Color(0, 0, 0, 1)
 
-[node name="Login" parent="CanvasLayer/Screens" instance=ExtResource("2_2b8km")]
-layout_mode = 2
+[node name="World" type="CanvasLayer" parent="."]
+layer = 2
+follow_viewport_enabled = true
+
+[node name="Map" type="Node2D" parent="World"]
+
+[node name="Players" type="Node2D" parent="World"]
+
+[node name="Screens" type="CanvasLayer" parent="."]
+layer = 3
+
+[node name="Login" parent="Screens" instance=ExtResource("2_2b8km")]
 size_flags_vertical = 4
