@@ -1,18 +1,18 @@
-[gd_scene load_steps=21 format=3 uid="uid://d34t5vdcy2gjd"]
+[gd_scene load_steps=42 format=3 uid="uid://bkd7n5vpe00q4"]
 
-[ext_resource type="Texture2D" uid="uid://cqduhc0y38cw" path="res://assets/textures/paperdoll/head/head1.png" id="2_75nkp"]
-[ext_resource type="Script" path="res://entities/player/player.gd" id="2_f8h6n"]
-[ext_resource type="Texture2D" uid="uid://btfqhxtes0jjm" path="res://assets/textures/paperdoll/top/top0.png" id="3_1vvfw"]
-[ext_resource type="Texture2D" uid="uid://dwclhlx0qy0ag" path="res://assets/textures/paperdoll/bottom/bottom0.png" id="4_gjerj"]
-[ext_resource type="Texture2D" uid="uid://c4hi02dv5qtas" path="res://assets/textures/paperdoll/shadow/shadow.png" id="5_2ywir"]
-[ext_resource type="Texture2D" uid="uid://mlrevabbxna8" path="res://assets/textures/paperdoll/weapon/sword1.png" id="6_nldx1"]
+[ext_resource type="Script" path="res://objects/paperdoll/paperdoll.gd" id="1_covj2"]
+[ext_resource type="Texture2D" uid="uid://c4hi02dv5qtas" path="res://assets/textures/paperdoll/shadow/shadow.png" id="2_yis6o"]
+[ext_resource type="Texture2D" uid="uid://cqduhc0y38cw" path="res://assets/textures/paperdoll/head/head1.png" id="3_fqo3i"]
+[ext_resource type="Texture2D" uid="uid://btfqhxtes0jjm" path="res://assets/textures/paperdoll/top/top0.png" id="4_yf2ye"]
+[ext_resource type="Texture2D" uid="uid://dwclhlx0qy0ag" path="res://assets/textures/paperdoll/bottom/bottom0.png" id="5_ve5x7"]
+[ext_resource type="Texture2D" uid="uid://mlrevabbxna8" path="res://assets/textures/paperdoll/weapon/sword1.png" id="6_gkme3"]
 
 [sub_resource type="Animation" id="Animation_mohlp"]
 length = 0.001
 tracks/0/type = "value"
 tracks/0/imported = false
 tracks/0/enabled = true
-tracks/0/path = NodePath("Paperdoll/Head:frame")
+tracks/0/path = NodePath("Layers/Head:frame")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/keys = {
@@ -24,7 +24,7 @@ tracks/0/keys = {
 tracks/1/type = "value"
 tracks/1/imported = false
 tracks/1/enabled = true
-tracks/1/path = NodePath("Paperdoll/Top:frame")
+tracks/1/path = NodePath("Layers/Top:frame")
 tracks/1/interp = 1
 tracks/1/loop_wrap = true
 tracks/1/keys = {
@@ -36,7 +36,7 @@ tracks/1/keys = {
 tracks/2/type = "value"
 tracks/2/imported = false
 tracks/2/enabled = true
-tracks/2/path = NodePath("Paperdoll/Bottom:frame")
+tracks/2/path = NodePath("Layers/Bottom:frame")
 tracks/2/interp = 1
 tracks/2/loop_wrap = true
 tracks/2/keys = {
@@ -48,7 +48,7 @@ tracks/2/keys = {
 tracks/3/type = "value"
 tracks/3/imported = false
 tracks/3/enabled = true
-tracks/3/path = NodePath("Paperdoll/Weapon:frame")
+tracks/3/path = NodePath("Layers/Weapon:frame")
 tracks/3/interp = 1
 tracks/3/loop_wrap = true
 tracks/3/keys = {
@@ -60,7 +60,7 @@ tracks/3/keys = {
 tracks/4/type = "value"
 tracks/4/imported = false
 tracks/4/enabled = true
-tracks/4/path = NodePath("Paperdoll/Shadow:frame")
+tracks/4/path = NodePath("Layers/Shadow:frame")
 tracks/4/interp = 1
 tracks/4/loop_wrap = true
 tracks/4/keys = {
@@ -72,7 +72,7 @@ tracks/4/keys = {
 tracks/5/type = "value"
 tracks/5/imported = false
 tracks/5/enabled = true
-tracks/5/path = NodePath("Paperdoll/Head:z_index")
+tracks/5/path = NodePath("Layers/Head:z_index")
 tracks/5/interp = 1
 tracks/5/loop_wrap = true
 tracks/5/keys = {
@@ -84,7 +84,7 @@ tracks/5/keys = {
 tracks/6/type = "value"
 tracks/6/imported = false
 tracks/6/enabled = true
-tracks/6/path = NodePath("Paperdoll/Top:z_index")
+tracks/6/path = NodePath("Layers/Top:z_index")
 tracks/6/interp = 1
 tracks/6/loop_wrap = true
 tracks/6/keys = {
@@ -96,7 +96,7 @@ tracks/6/keys = {
 tracks/7/type = "value"
 tracks/7/imported = false
 tracks/7/enabled = true
-tracks/7/path = NodePath("Paperdoll/Bottom:z_index")
+tracks/7/path = NodePath("Layers/Bottom:z_index")
 tracks/7/interp = 1
 tracks/7/loop_wrap = true
 tracks/7/keys = {
@@ -108,7 +108,7 @@ tracks/7/keys = {
 tracks/8/type = "value"
 tracks/8/imported = false
 tracks/8/enabled = true
-tracks/8/path = NodePath("Paperdoll/Weapon:z_index")
+tracks/8/path = NodePath("Layers/Weapon:z_index")
 tracks/8/interp = 1
 tracks/8/loop_wrap = true
 tracks/8/keys = {
@@ -125,7 +125,7 @@ step = 0.1
 tracks/0/type = "value"
 tracks/0/imported = false
 tracks/0/enabled = true
-tracks/0/path = NodePath("Paperdoll/Head:frame")
+tracks/0/path = NodePath("Layers/Head:frame")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/keys = {
@@ -137,7 +137,7 @@ tracks/0/keys = {
 tracks/1/type = "value"
 tracks/1/imported = false
 tracks/1/enabled = true
-tracks/1/path = NodePath("Paperdoll/Top:frame")
+tracks/1/path = NodePath("Layers/Top:frame")
 tracks/1/interp = 1
 tracks/1/loop_wrap = true
 tracks/1/keys = {
@@ -149,7 +149,7 @@ tracks/1/keys = {
 tracks/2/type = "value"
 tracks/2/imported = false
 tracks/2/enabled = true
-tracks/2/path = NodePath("Paperdoll/Bottom:frame")
+tracks/2/path = NodePath("Layers/Bottom:frame")
 tracks/2/interp = 1
 tracks/2/loop_wrap = true
 tracks/2/keys = {
@@ -161,7 +161,7 @@ tracks/2/keys = {
 tracks/3/type = "value"
 tracks/3/imported = false
 tracks/3/enabled = true
-tracks/3/path = NodePath("Paperdoll/Weapon:frame")
+tracks/3/path = NodePath("Layers/Weapon:frame")
 tracks/3/interp = 1
 tracks/3/loop_wrap = true
 tracks/3/keys = {
@@ -173,7 +173,7 @@ tracks/3/keys = {
 tracks/4/type = "value"
 tracks/4/imported = false
 tracks/4/enabled = true
-tracks/4/path = NodePath("Paperdoll/Shadow:frame")
+tracks/4/path = NodePath("Layers/Shadow:frame")
 tracks/4/interp = 1
 tracks/4/loop_wrap = true
 tracks/4/keys = {
@@ -185,7 +185,7 @@ tracks/4/keys = {
 tracks/5/type = "value"
 tracks/5/imported = false
 tracks/5/enabled = true
-tracks/5/path = NodePath("Paperdoll/Weapon:z_index")
+tracks/5/path = NodePath("Layers/Weapon:z_index")
 tracks/5/interp = 1
 tracks/5/loop_wrap = true
 tracks/5/keys = {
@@ -193,6 +193,20 @@ tracks/5/keys = {
 "transitions": PackedFloat32Array(1),
 "update": 1,
 "values": [5]
+}
+tracks/6/type = "method"
+tracks/6/imported = false
+tracks/6/enabled = true
+tracks/6/path = NodePath(".")
+tracks/6/interp = 1
+tracks/6/loop_wrap = true
+tracks/6/keys = {
+"times": PackedFloat32Array(0.5),
+"transitions": PackedFloat32Array(1),
+"values": [{
+"args": [],
+"method": &"_end_attack"
+}]
 }
 
 [sub_resource type="Animation" id="Animation_arm0w"]
@@ -202,7 +216,7 @@ step = 0.1
 tracks/0/type = "value"
 tracks/0/imported = false
 tracks/0/enabled = true
-tracks/0/path = NodePath("Paperdoll/Head:frame")
+tracks/0/path = NodePath("Layers/Head:frame")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/keys = {
@@ -214,7 +228,7 @@ tracks/0/keys = {
 tracks/1/type = "value"
 tracks/1/imported = false
 tracks/1/enabled = true
-tracks/1/path = NodePath("Paperdoll/Top:frame")
+tracks/1/path = NodePath("Layers/Top:frame")
 tracks/1/interp = 1
 tracks/1/loop_wrap = true
 tracks/1/keys = {
@@ -226,7 +240,7 @@ tracks/1/keys = {
 tracks/2/type = "value"
 tracks/2/imported = false
 tracks/2/enabled = true
-tracks/2/path = NodePath("Paperdoll/Bottom:frame")
+tracks/2/path = NodePath("Layers/Bottom:frame")
 tracks/2/interp = 1
 tracks/2/loop_wrap = true
 tracks/2/keys = {
@@ -238,7 +252,7 @@ tracks/2/keys = {
 tracks/3/type = "value"
 tracks/3/imported = false
 tracks/3/enabled = true
-tracks/3/path = NodePath("Paperdoll/Weapon:frame")
+tracks/3/path = NodePath("Layers/Weapon:frame")
 tracks/3/interp = 1
 tracks/3/loop_wrap = true
 tracks/3/keys = {
@@ -250,7 +264,7 @@ tracks/3/keys = {
 tracks/4/type = "value"
 tracks/4/imported = false
 tracks/4/enabled = true
-tracks/4/path = NodePath("Paperdoll/Shadow:frame")
+tracks/4/path = NodePath("Layers/Shadow:frame")
 tracks/4/interp = 1
 tracks/4/loop_wrap = true
 tracks/4/keys = {
@@ -262,7 +276,7 @@ tracks/4/keys = {
 tracks/5/type = "value"
 tracks/5/imported = false
 tracks/5/enabled = true
-tracks/5/path = NodePath("Paperdoll/Weapon:z_index")
+tracks/5/path = NodePath("Layers/Weapon:z_index")
 tracks/5/interp = 1
 tracks/5/loop_wrap = true
 tracks/5/keys = {
@@ -270,6 +284,23 @@ tracks/5/keys = {
 "transitions": PackedFloat32Array(1),
 "update": 1,
 "values": [5]
+}
+tracks/6/type = "method"
+tracks/6/imported = false
+tracks/6/enabled = true
+tracks/6/path = NodePath(".")
+tracks/6/interp = 1
+tracks/6/loop_wrap = true
+tracks/6/keys = {
+"times": PackedFloat32Array(0, 0.5),
+"transitions": PackedFloat32Array(1, 1),
+"values": [{
+"args": [],
+"method": &"_end_attack"
+}, {
+"args": [],
+"method": &"_end_attack"
+}]
 }
 
 [sub_resource type="Animation" id="Animation_l7wu8"]
@@ -279,7 +310,7 @@ step = 0.1
 tracks/0/type = "value"
 tracks/0/imported = false
 tracks/0/enabled = true
-tracks/0/path = NodePath("Paperdoll/Head:frame")
+tracks/0/path = NodePath("Layers/Head:frame")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/keys = {
@@ -291,7 +322,7 @@ tracks/0/keys = {
 tracks/1/type = "value"
 tracks/1/imported = false
 tracks/1/enabled = true
-tracks/1/path = NodePath("Paperdoll/Top:frame")
+tracks/1/path = NodePath("Layers/Top:frame")
 tracks/1/interp = 1
 tracks/1/loop_wrap = true
 tracks/1/keys = {
@@ -303,7 +334,7 @@ tracks/1/keys = {
 tracks/2/type = "value"
 tracks/2/imported = false
 tracks/2/enabled = true
-tracks/2/path = NodePath("Paperdoll/Bottom:frame")
+tracks/2/path = NodePath("Layers/Bottom:frame")
 tracks/2/interp = 1
 tracks/2/loop_wrap = true
 tracks/2/keys = {
@@ -315,7 +346,7 @@ tracks/2/keys = {
 tracks/3/type = "value"
 tracks/3/imported = false
 tracks/3/enabled = true
-tracks/3/path = NodePath("Paperdoll/Weapon:frame")
+tracks/3/path = NodePath("Layers/Weapon:frame")
 tracks/3/interp = 1
 tracks/3/loop_wrap = true
 tracks/3/keys = {
@@ -327,7 +358,7 @@ tracks/3/keys = {
 tracks/4/type = "value"
 tracks/4/imported = false
 tracks/4/enabled = true
-tracks/4/path = NodePath("Paperdoll/Shadow:frame")
+tracks/4/path = NodePath("Layers/Shadow:frame")
 tracks/4/interp = 1
 tracks/4/loop_wrap = true
 tracks/4/keys = {
@@ -339,7 +370,7 @@ tracks/4/keys = {
 tracks/5/type = "value"
 tracks/5/imported = false
 tracks/5/enabled = true
-tracks/5/path = NodePath("Paperdoll/Weapon:z_index")
+tracks/5/path = NodePath("Layers/Weapon:z_index")
 tracks/5/interp = 1
 tracks/5/loop_wrap = true
 tracks/5/keys = {
@@ -347,6 +378,20 @@ tracks/5/keys = {
 "transitions": PackedFloat32Array(1),
 "update": 1,
 "values": [5]
+}
+tracks/6/type = "method"
+tracks/6/imported = false
+tracks/6/enabled = true
+tracks/6/path = NodePath(".")
+tracks/6/interp = 1
+tracks/6/loop_wrap = true
+tracks/6/keys = {
+"times": PackedFloat32Array(0.5),
+"transitions": PackedFloat32Array(1),
+"values": [{
+"args": [],
+"method": &"_end_attack"
+}]
 }
 
 [sub_resource type="Animation" id="Animation_y7dfa"]
@@ -356,7 +401,7 @@ step = 0.1
 tracks/0/type = "value"
 tracks/0/imported = false
 tracks/0/enabled = true
-tracks/0/path = NodePath("Paperdoll/Head:frame")
+tracks/0/path = NodePath("Layers/Head:frame")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/keys = {
@@ -368,7 +413,7 @@ tracks/0/keys = {
 tracks/1/type = "value"
 tracks/1/imported = false
 tracks/1/enabled = true
-tracks/1/path = NodePath("Paperdoll/Top:frame")
+tracks/1/path = NodePath("Layers/Top:frame")
 tracks/1/interp = 1
 tracks/1/loop_wrap = true
 tracks/1/keys = {
@@ -380,7 +425,7 @@ tracks/1/keys = {
 tracks/2/type = "value"
 tracks/2/imported = false
 tracks/2/enabled = true
-tracks/2/path = NodePath("Paperdoll/Bottom:frame")
+tracks/2/path = NodePath("Layers/Bottom:frame")
 tracks/2/interp = 1
 tracks/2/loop_wrap = true
 tracks/2/keys = {
@@ -392,7 +437,7 @@ tracks/2/keys = {
 tracks/3/type = "value"
 tracks/3/imported = false
 tracks/3/enabled = true
-tracks/3/path = NodePath("Paperdoll/Weapon:frame")
+tracks/3/path = NodePath("Layers/Weapon:frame")
 tracks/3/interp = 1
 tracks/3/loop_wrap = true
 tracks/3/keys = {
@@ -404,7 +449,7 @@ tracks/3/keys = {
 tracks/4/type = "value"
 tracks/4/imported = false
 tracks/4/enabled = true
-tracks/4/path = NodePath("Paperdoll/Shadow:frame")
+tracks/4/path = NodePath("Layers/Shadow:frame")
 tracks/4/interp = 1
 tracks/4/loop_wrap = true
 tracks/4/keys = {
@@ -416,7 +461,7 @@ tracks/4/keys = {
 tracks/5/type = "value"
 tracks/5/imported = false
 tracks/5/enabled = true
-tracks/5/path = NodePath("Paperdoll/Weapon:z_index")
+tracks/5/path = NodePath("Layers/Weapon:z_index")
 tracks/5/interp = 1
 tracks/5/loop_wrap = true
 tracks/5/keys = {
@@ -425,13 +470,27 @@ tracks/5/keys = {
 "update": 1,
 "values": [4]
 }
+tracks/6/type = "method"
+tracks/6/imported = false
+tracks/6/enabled = true
+tracks/6/path = NodePath(".")
+tracks/6/interp = 1
+tracks/6/loop_wrap = true
+tracks/6/keys = {
+"times": PackedFloat32Array(0.5),
+"transitions": PackedFloat32Array(1),
+"values": [{
+"args": [],
+"method": &"_end_attack"
+}]
+}
 
 [sub_resource type="Animation" id="Animation_fnp7p"]
 resource_name = "idle_down"
 tracks/0/type = "value"
 tracks/0/imported = false
 tracks/0/enabled = true
-tracks/0/path = NodePath("Paperdoll/Head:frame")
+tracks/0/path = NodePath("Layers/Head:frame")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/keys = {
@@ -443,7 +502,7 @@ tracks/0/keys = {
 tracks/1/type = "value"
 tracks/1/imported = false
 tracks/1/enabled = true
-tracks/1/path = NodePath("Paperdoll/Top:frame")
+tracks/1/path = NodePath("Layers/Top:frame")
 tracks/1/interp = 1
 tracks/1/loop_wrap = true
 tracks/1/keys = {
@@ -455,7 +514,7 @@ tracks/1/keys = {
 tracks/2/type = "value"
 tracks/2/imported = false
 tracks/2/enabled = true
-tracks/2/path = NodePath("Paperdoll/Bottom:frame")
+tracks/2/path = NodePath("Layers/Bottom:frame")
 tracks/2/interp = 1
 tracks/2/loop_wrap = true
 tracks/2/keys = {
@@ -467,7 +526,7 @@ tracks/2/keys = {
 tracks/3/type = "value"
 tracks/3/imported = false
 tracks/3/enabled = true
-tracks/3/path = NodePath("Paperdoll/Weapon:frame")
+tracks/3/path = NodePath("Layers/Weapon:frame")
 tracks/3/interp = 1
 tracks/3/loop_wrap = true
 tracks/3/keys = {
@@ -479,7 +538,7 @@ tracks/3/keys = {
 tracks/4/type = "value"
 tracks/4/imported = false
 tracks/4/enabled = true
-tracks/4/path = NodePath("Paperdoll/Shadow:frame")
+tracks/4/path = NodePath("Layers/Shadow:frame")
 tracks/4/interp = 1
 tracks/4/loop_wrap = true
 tracks/4/keys = {
@@ -491,7 +550,7 @@ tracks/4/keys = {
 tracks/5/type = "value"
 tracks/5/imported = false
 tracks/5/enabled = true
-tracks/5/path = NodePath("Paperdoll/Weapon:z_index")
+tracks/5/path = NodePath("Layers/Weapon:z_index")
 tracks/5/interp = 1
 tracks/5/loop_wrap = true
 tracks/5/keys = {
@@ -507,7 +566,7 @@ step = 0.1
 tracks/0/type = "value"
 tracks/0/imported = false
 tracks/0/enabled = true
-tracks/0/path = NodePath("Paperdoll/Head:frame")
+tracks/0/path = NodePath("Layers/Head:frame")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/keys = {
@@ -519,7 +578,7 @@ tracks/0/keys = {
 tracks/1/type = "value"
 tracks/1/imported = false
 tracks/1/enabled = true
-tracks/1/path = NodePath("Paperdoll/Top:frame")
+tracks/1/path = NodePath("Layers/Top:frame")
 tracks/1/interp = 1
 tracks/1/loop_wrap = true
 tracks/1/keys = {
@@ -531,7 +590,7 @@ tracks/1/keys = {
 tracks/2/type = "value"
 tracks/2/imported = false
 tracks/2/enabled = true
-tracks/2/path = NodePath("Paperdoll/Bottom:frame")
+tracks/2/path = NodePath("Layers/Bottom:frame")
 tracks/2/interp = 1
 tracks/2/loop_wrap = true
 tracks/2/keys = {
@@ -543,7 +602,7 @@ tracks/2/keys = {
 tracks/3/type = "value"
 tracks/3/imported = false
 tracks/3/enabled = true
-tracks/3/path = NodePath("Paperdoll/Weapon:frame")
+tracks/3/path = NodePath("Layers/Weapon:frame")
 tracks/3/interp = 1
 tracks/3/loop_wrap = true
 tracks/3/keys = {
@@ -555,7 +614,7 @@ tracks/3/keys = {
 tracks/4/type = "value"
 tracks/4/imported = false
 tracks/4/enabled = true
-tracks/4/path = NodePath("Paperdoll/Shadow:frame")
+tracks/4/path = NodePath("Layers/Shadow:frame")
 tracks/4/interp = 1
 tracks/4/loop_wrap = true
 tracks/4/keys = {
@@ -567,7 +626,7 @@ tracks/4/keys = {
 tracks/5/type = "value"
 tracks/5/imported = false
 tracks/5/enabled = true
-tracks/5/path = NodePath("Paperdoll/Weapon:z_index")
+tracks/5/path = NodePath("Layers/Weapon:z_index")
 tracks/5/interp = 1
 tracks/5/loop_wrap = true
 tracks/5/keys = {
@@ -582,7 +641,7 @@ resource_name = "idle_right"
 tracks/0/type = "value"
 tracks/0/imported = false
 tracks/0/enabled = true
-tracks/0/path = NodePath("Paperdoll/Head:frame")
+tracks/0/path = NodePath("Layers/Head:frame")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/keys = {
@@ -594,7 +653,7 @@ tracks/0/keys = {
 tracks/1/type = "value"
 tracks/1/imported = false
 tracks/1/enabled = true
-tracks/1/path = NodePath("Paperdoll/Top:frame")
+tracks/1/path = NodePath("Layers/Top:frame")
 tracks/1/interp = 1
 tracks/1/loop_wrap = true
 tracks/1/keys = {
@@ -606,7 +665,7 @@ tracks/1/keys = {
 tracks/2/type = "value"
 tracks/2/imported = false
 tracks/2/enabled = true
-tracks/2/path = NodePath("Paperdoll/Bottom:frame")
+tracks/2/path = NodePath("Layers/Bottom:frame")
 tracks/2/interp = 1
 tracks/2/loop_wrap = true
 tracks/2/keys = {
@@ -618,7 +677,7 @@ tracks/2/keys = {
 tracks/3/type = "value"
 tracks/3/imported = false
 tracks/3/enabled = true
-tracks/3/path = NodePath("Paperdoll/Weapon:frame")
+tracks/3/path = NodePath("Layers/Weapon:frame")
 tracks/3/interp = 1
 tracks/3/loop_wrap = true
 tracks/3/keys = {
@@ -630,7 +689,7 @@ tracks/3/keys = {
 tracks/4/type = "value"
 tracks/4/imported = false
 tracks/4/enabled = true
-tracks/4/path = NodePath("Paperdoll/Shadow:frame")
+tracks/4/path = NodePath("Layers/Shadow:frame")
 tracks/4/interp = 1
 tracks/4/loop_wrap = true
 tracks/4/keys = {
@@ -642,7 +701,7 @@ tracks/4/keys = {
 tracks/5/type = "value"
 tracks/5/imported = false
 tracks/5/enabled = true
-tracks/5/path = NodePath("Paperdoll/Weapon:z_index")
+tracks/5/path = NodePath("Layers/Weapon:z_index")
 tracks/5/interp = 1
 tracks/5/loop_wrap = true
 tracks/5/keys = {
@@ -657,7 +716,7 @@ resource_name = "idle_up"
 tracks/0/type = "value"
 tracks/0/imported = false
 tracks/0/enabled = true
-tracks/0/path = NodePath("Paperdoll/Head:frame")
+tracks/0/path = NodePath("Layers/Head:frame")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/keys = {
@@ -669,7 +728,7 @@ tracks/0/keys = {
 tracks/1/type = "value"
 tracks/1/imported = false
 tracks/1/enabled = true
-tracks/1/path = NodePath("Paperdoll/Top:frame")
+tracks/1/path = NodePath("Layers/Top:frame")
 tracks/1/interp = 1
 tracks/1/loop_wrap = true
 tracks/1/keys = {
@@ -681,7 +740,7 @@ tracks/1/keys = {
 tracks/2/type = "value"
 tracks/2/imported = false
 tracks/2/enabled = true
-tracks/2/path = NodePath("Paperdoll/Bottom:frame")
+tracks/2/path = NodePath("Layers/Bottom:frame")
 tracks/2/interp = 1
 tracks/2/loop_wrap = true
 tracks/2/keys = {
@@ -693,7 +752,7 @@ tracks/2/keys = {
 tracks/3/type = "value"
 tracks/3/imported = false
 tracks/3/enabled = true
-tracks/3/path = NodePath("Paperdoll/Weapon:frame")
+tracks/3/path = NodePath("Layers/Weapon:frame")
 tracks/3/interp = 1
 tracks/3/loop_wrap = true
 tracks/3/keys = {
@@ -705,7 +764,7 @@ tracks/3/keys = {
 tracks/4/type = "value"
 tracks/4/imported = false
 tracks/4/enabled = true
-tracks/4/path = NodePath("Paperdoll/Shadow:frame")
+tracks/4/path = NodePath("Layers/Shadow:frame")
 tracks/4/interp = 1
 tracks/4/loop_wrap = true
 tracks/4/keys = {
@@ -717,7 +776,7 @@ tracks/4/keys = {
 tracks/5/type = "value"
 tracks/5/imported = false
 tracks/5/enabled = true
-tracks/5/path = NodePath("Paperdoll/Weapon:z_index")
+tracks/5/path = NodePath("Layers/Weapon:z_index")
 tracks/5/interp = 1
 tracks/5/loop_wrap = true
 tracks/5/keys = {
@@ -729,61 +788,60 @@ tracks/5/keys = {
 
 [sub_resource type="Animation" id="Animation_bi4ml"]
 resource_name = "walk_down"
-length = 0.5
-loop_mode = 2
+loop_mode = 1
 step = 0.25
 tracks/0/type = "value"
 tracks/0/imported = false
 tracks/0/enabled = true
-tracks/0/path = NodePath("Paperdoll/Head:frame")
+tracks/0/path = NodePath("Layers/Head:frame")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/keys = {
-"times": PackedFloat32Array(0, 0.25, 0.5),
-"transitions": PackedFloat32Array(1, 1, 1),
+"times": PackedFloat32Array(0, 0.25, 0.5, 0.75, 1),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1),
 "update": 1,
-"values": [0, 1, 2]
+"values": [0, 1, 2, 1, 2]
 }
 tracks/1/type = "value"
 tracks/1/imported = false
 tracks/1/enabled = true
-tracks/1/path = NodePath("Paperdoll/Top:frame")
+tracks/1/path = NodePath("Layers/Top:frame")
 tracks/1/interp = 1
 tracks/1/loop_wrap = true
 tracks/1/keys = {
-"times": PackedFloat32Array(0, 0.25, 0.5),
-"transitions": PackedFloat32Array(1, 1, 1),
+"times": PackedFloat32Array(0, 0.25, 0.5, 0.75, 1),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1),
 "update": 1,
-"values": [0, 1, 2]
+"values": [0, 1, 2, 1, 2]
 }
 tracks/2/type = "value"
 tracks/2/imported = false
 tracks/2/enabled = true
-tracks/2/path = NodePath("Paperdoll/Bottom:frame")
+tracks/2/path = NodePath("Layers/Bottom:frame")
 tracks/2/interp = 1
 tracks/2/loop_wrap = true
 tracks/2/keys = {
-"times": PackedFloat32Array(0, 0.25, 0.5),
-"transitions": PackedFloat32Array(1, 1, 1),
+"times": PackedFloat32Array(0, 0.25, 0.5, 0.75, 1),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1),
 "update": 1,
-"values": [0, 1, 2]
+"values": [0, 1, 2, 1, 2]
 }
 tracks/3/type = "value"
 tracks/3/imported = false
 tracks/3/enabled = true
-tracks/3/path = NodePath("Paperdoll/Weapon:frame")
+tracks/3/path = NodePath("Layers/Weapon:frame")
 tracks/3/interp = 1
 tracks/3/loop_wrap = true
 tracks/3/keys = {
-"times": PackedFloat32Array(0, 0.25, 0.5),
-"transitions": PackedFloat32Array(1, 1, 1),
+"times": PackedFloat32Array(0, 0.25, 0.5, 0.75, 1),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1),
 "update": 1,
-"values": [0, 1, 2]
+"values": [0, 1, 2, 1, 2]
 }
 tracks/4/type = "value"
 tracks/4/imported = false
 tracks/4/enabled = true
-tracks/4/path = NodePath("Paperdoll/Weapon:z_index")
+tracks/4/path = NodePath("Layers/Weapon:z_index")
 tracks/4/interp = 1
 tracks/4/loop_wrap = true
 tracks/4/keys = {
@@ -795,85 +853,84 @@ tracks/4/keys = {
 tracks/5/type = "value"
 tracks/5/imported = false
 tracks/5/enabled = true
-tracks/5/path = NodePath("Paperdoll/Shadow:frame")
+tracks/5/path = NodePath("Layers/Shadow:frame")
 tracks/5/interp = 1
 tracks/5/loop_wrap = true
 tracks/5/keys = {
-"times": PackedFloat32Array(0, 0.25, 0.5),
-"transitions": PackedFloat32Array(1, 1, 1),
+"times": PackedFloat32Array(0, 0.25, 0.5, 0.75, 1),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1),
 "update": 1,
-"values": [0, 1, 2]
+"values": [0, 1, 2, 1, 2]
 }
 
 [sub_resource type="Animation" id="Animation_qrvcv"]
 resource_name = "walk_left"
-length = 0.5
-loop_mode = 2
+loop_mode = 1
 step = 0.25
 tracks/0/type = "value"
 tracks/0/imported = false
 tracks/0/enabled = true
-tracks/0/path = NodePath("Paperdoll/Head:frame")
+tracks/0/path = NodePath("Layers/Head:frame")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/keys = {
-"times": PackedFloat32Array(0, 0.25, 0.5),
-"transitions": PackedFloat32Array(1, 1, 1),
+"times": PackedFloat32Array(0, 0.25, 0.5, 0.75, 1),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1),
 "update": 1,
-"values": [23, 24, 25]
+"values": [23, 24, 25, 24, 25]
 }
 tracks/1/type = "value"
 tracks/1/imported = false
 tracks/1/enabled = true
-tracks/1/path = NodePath("Paperdoll/Top:frame")
+tracks/1/path = NodePath("Layers/Top:frame")
 tracks/1/interp = 1
 tracks/1/loop_wrap = true
 tracks/1/keys = {
-"times": PackedFloat32Array(0, 0.25, 0.5),
-"transitions": PackedFloat32Array(1, 1, 1),
+"times": PackedFloat32Array(0, 0.25, 0.5, 0.75, 1),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1),
 "update": 1,
-"values": [23, 24, 25]
+"values": [23, 24, 25, 24, 25]
 }
 tracks/2/type = "value"
 tracks/2/imported = false
 tracks/2/enabled = true
-tracks/2/path = NodePath("Paperdoll/Bottom:frame")
+tracks/2/path = NodePath("Layers/Bottom:frame")
 tracks/2/interp = 1
 tracks/2/loop_wrap = true
 tracks/2/keys = {
-"times": PackedFloat32Array(0, 0.25, 0.5),
-"transitions": PackedFloat32Array(1, 1, 1),
+"times": PackedFloat32Array(0, 0.25, 0.5, 0.75, 1),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1),
 "update": 1,
-"values": [23, 24, 25]
+"values": [23, 24, 25, 24, 25]
 }
 tracks/3/type = "value"
 tracks/3/imported = false
 tracks/3/enabled = true
-tracks/3/path = NodePath("Paperdoll/Weapon:frame")
+tracks/3/path = NodePath("Layers/Weapon:frame")
 tracks/3/interp = 1
 tracks/3/loop_wrap = true
 tracks/3/keys = {
-"times": PackedFloat32Array(0, 0.25, 0.5),
-"transitions": PackedFloat32Array(1, 1, 1),
+"times": PackedFloat32Array(0, 0.25, 0.5, 0.75, 1),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1),
 "update": 1,
-"values": [23, 24, 25]
+"values": [23, 24, 25, 24, 25]
 }
 tracks/4/type = "value"
 tracks/4/imported = false
 tracks/4/enabled = true
-tracks/4/path = NodePath("Paperdoll/Shadow:frame")
+tracks/4/path = NodePath("Layers/Shadow:frame")
 tracks/4/interp = 1
 tracks/4/loop_wrap = true
 tracks/4/keys = {
-"times": PackedFloat32Array(0, 0.25, 0.5),
-"transitions": PackedFloat32Array(1, 1, 1),
+"times": PackedFloat32Array(0, 0.25, 0.5, 0.75, 1),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1),
 "update": 1,
-"values": [23, 24, 25]
+"values": [23, 24, 25, 24, 25]
 }
 tracks/5/type = "value"
 tracks/5/imported = false
 tracks/5/enabled = true
-tracks/5/path = NodePath("Paperdoll/Weapon:z_index")
+tracks/5/path = NodePath("Layers/Weapon:z_index")
 tracks/5/interp = 1
 tracks/5/loop_wrap = true
 tracks/5/keys = {
@@ -885,73 +942,72 @@ tracks/5/keys = {
 
 [sub_resource type="Animation" id="Animation_kng7c"]
 resource_name = "walk_right"
-length = 0.5
-loop_mode = 2
+loop_mode = 1
 step = 0.25
 tracks/0/type = "value"
 tracks/0/imported = false
 tracks/0/enabled = true
-tracks/0/path = NodePath("Paperdoll/Head:frame")
+tracks/0/path = NodePath("Layers/Head:frame")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/keys = {
-"times": PackedFloat32Array(0, 0.25, 0.5),
-"transitions": PackedFloat32Array(1, 1, 1),
+"times": PackedFloat32Array(0, 0.25, 0.5, 0.75, 1),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1),
 "update": 1,
-"values": [46, 47, 48]
+"values": [46, 47, 48, 47, 48]
 }
 tracks/1/type = "value"
 tracks/1/imported = false
 tracks/1/enabled = true
-tracks/1/path = NodePath("Paperdoll/Top:frame")
+tracks/1/path = NodePath("Layers/Top:frame")
 tracks/1/interp = 1
 tracks/1/loop_wrap = true
 tracks/1/keys = {
-"times": PackedFloat32Array(0, 0.25, 0.5),
-"transitions": PackedFloat32Array(1, 1, 1),
+"times": PackedFloat32Array(0, 0.25, 0.5, 0.75, 1),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1),
 "update": 1,
-"values": [46, 47, 48]
+"values": [46, 47, 48, 47, 48]
 }
 tracks/2/type = "value"
 tracks/2/imported = false
 tracks/2/enabled = true
-tracks/2/path = NodePath("Paperdoll/Bottom:frame")
+tracks/2/path = NodePath("Layers/Bottom:frame")
 tracks/2/interp = 1
 tracks/2/loop_wrap = true
 tracks/2/keys = {
-"times": PackedFloat32Array(0, 0.25, 0.5),
-"transitions": PackedFloat32Array(1, 1, 1),
+"times": PackedFloat32Array(0, 0.25, 0.5, 0.75, 1),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1),
 "update": 1,
-"values": [46, 47, 48]
+"values": [46, 47, 48, 47, 48]
 }
 tracks/3/type = "value"
 tracks/3/imported = false
 tracks/3/enabled = true
-tracks/3/path = NodePath("Paperdoll/Weapon:frame")
+tracks/3/path = NodePath("Layers/Weapon:frame")
 tracks/3/interp = 1
 tracks/3/loop_wrap = true
 tracks/3/keys = {
-"times": PackedFloat32Array(0, 0.25, 0.5),
-"transitions": PackedFloat32Array(1, 1, 1),
+"times": PackedFloat32Array(0, 0.25, 0.5, 0.75, 1),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1),
 "update": 1,
-"values": [46, 47, 48]
+"values": [46, 47, 48, 47, 48]
 }
 tracks/4/type = "value"
 tracks/4/imported = false
 tracks/4/enabled = true
-tracks/4/path = NodePath("Paperdoll/Shadow:frame")
+tracks/4/path = NodePath("Layers/Shadow:frame")
 tracks/4/interp = 1
 tracks/4/loop_wrap = true
 tracks/4/keys = {
-"times": PackedFloat32Array(0, 0.25, 0.5),
-"transitions": PackedFloat32Array(1, 1, 1),
+"times": PackedFloat32Array(0, 0.25, 0.5, 0.75, 1),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1),
 "update": 1,
-"values": [46, 47, 48]
+"values": [46, 47, 48, 47, 48]
 }
 tracks/5/type = "value"
 tracks/5/imported = false
 tracks/5/enabled = true
-tracks/5/path = NodePath("Paperdoll/Weapon:z_index")
+tracks/5/path = NodePath("Layers/Weapon:z_index")
 tracks/5/interp = 1
 tracks/5/loop_wrap = true
 tracks/5/keys = {
@@ -963,73 +1019,72 @@ tracks/5/keys = {
 
 [sub_resource type="Animation" id="Animation_whnju"]
 resource_name = "walk_up"
-length = 0.5
-loop_mode = 2
+loop_mode = 1
 step = 0.25
 tracks/0/type = "value"
 tracks/0/imported = false
 tracks/0/enabled = true
-tracks/0/path = NodePath("Paperdoll/Head:frame")
+tracks/0/path = NodePath("Layers/Head:frame")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/keys = {
-"times": PackedFloat32Array(0, 0.25, 0.5),
-"transitions": PackedFloat32Array(1, 1, 1),
+"times": PackedFloat32Array(0, 0.25, 0.5, 0.75, 1),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1),
 "update": 1,
-"values": [69, 70, 71]
+"values": [69, 70, 71, 70, 71]
 }
 tracks/1/type = "value"
 tracks/1/imported = false
 tracks/1/enabled = true
-tracks/1/path = NodePath("Paperdoll/Top:frame")
+tracks/1/path = NodePath("Layers/Top:frame")
 tracks/1/interp = 1
 tracks/1/loop_wrap = true
 tracks/1/keys = {
-"times": PackedFloat32Array(0, 0.25, 0.5),
-"transitions": PackedFloat32Array(1, 1, 1),
+"times": PackedFloat32Array(0, 0.25, 0.5, 0.75, 1),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1),
 "update": 1,
-"values": [69, 70, 71]
+"values": [69, 70, 71, 70, 71]
 }
 tracks/2/type = "value"
 tracks/2/imported = false
 tracks/2/enabled = true
-tracks/2/path = NodePath("Paperdoll/Bottom:frame")
+tracks/2/path = NodePath("Layers/Bottom:frame")
 tracks/2/interp = 1
 tracks/2/loop_wrap = true
 tracks/2/keys = {
-"times": PackedFloat32Array(0, 0.25, 0.5),
-"transitions": PackedFloat32Array(1, 1, 1),
+"times": PackedFloat32Array(0, 0.25, 0.5, 0.75, 1),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1),
 "update": 1,
-"values": [69, 70, 71]
+"values": [69, 70, 71, 70, 71]
 }
 tracks/3/type = "value"
 tracks/3/imported = false
 tracks/3/enabled = true
-tracks/3/path = NodePath("Paperdoll/Weapon:frame")
+tracks/3/path = NodePath("Layers/Weapon:frame")
 tracks/3/interp = 1
 tracks/3/loop_wrap = true
 tracks/3/keys = {
-"times": PackedFloat32Array(0, 0.25, 0.5),
-"transitions": PackedFloat32Array(1, 1, 1),
+"times": PackedFloat32Array(0, 0.25, 0.5, 0.75, 1),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1),
 "update": 1,
-"values": [69, 70, 71]
+"values": [69, 70, 71, 70, 71]
 }
 tracks/4/type = "value"
 tracks/4/imported = false
 tracks/4/enabled = true
-tracks/4/path = NodePath("Paperdoll/Shadow:frame")
+tracks/4/path = NodePath("Layers/Shadow:frame")
 tracks/4/interp = 1
 tracks/4/loop_wrap = true
 tracks/4/keys = {
-"times": PackedFloat32Array(0, 0.25, 0.5),
-"transitions": PackedFloat32Array(1, 1, 1),
+"times": PackedFloat32Array(0, 0.25, 0.5, 0.75, 1),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1),
 "update": 1,
-"values": [69, 70, 71]
+"values": [69, 70, 71, 70, 71]
 }
 tracks/5/type = "value"
 tracks/5/imported = false
 tracks/5/enabled = true
-tracks/5/path = NodePath("Paperdoll/Weapon:z_index")
+tracks/5/path = NodePath("Layers/Weapon:z_index")
 tracks/5/interp = 1
 tracks/5/loop_wrap = true
 tracks/5/keys = {
@@ -1056,8 +1111,109 @@ _data = {
 "walk_up": SubResource("Animation_whnju")
 }
 
-[node name="Player" type="Node2D"]
-script = ExtResource("2_f8h6n")
+[sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_1objv"]
+animation = &"attack_left"
+
+[sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_rl5li"]
+animation = &"attack_right"
+
+[sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_cllbj"]
+animation = &"attack_up"
+
+[sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_wkgbu"]
+animation = &"attack_down"
+
+[sub_resource type="AnimationNodeBlendSpace2D" id="AnimationNodeBlendSpace2D_pdub6"]
+blend_point_0/node = SubResource("AnimationNodeAnimation_1objv")
+blend_point_0/pos = Vector2(-1, 0)
+blend_point_1/node = SubResource("AnimationNodeAnimation_rl5li")
+blend_point_1/pos = Vector2(1, 0)
+blend_point_2/node = SubResource("AnimationNodeAnimation_cllbj")
+blend_point_2/pos = Vector2(0, -1)
+blend_point_3/node = SubResource("AnimationNodeAnimation_wkgbu")
+blend_point_3/pos = Vector2(0, 1)
+
+[sub_resource type="AnimationNodeOneShot" id="AnimationNodeOneShot_m2yo8"]
+
+[sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_7pydm"]
+animation = &"idle_left"
+
+[sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_w4q7a"]
+animation = &"idle_right"
+
+[sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_tww3h"]
+animation = &"idle_up"
+
+[sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_t5y7g"]
+animation = &"idle_down"
+
+[sub_resource type="AnimationNodeBlendSpace2D" id="AnimationNodeBlendSpace2D_1djq1"]
+blend_point_0/node = SubResource("AnimationNodeAnimation_7pydm")
+blend_point_0/pos = Vector2(-1, 0)
+blend_point_1/node = SubResource("AnimationNodeAnimation_w4q7a")
+blend_point_1/pos = Vector2(1, 0)
+blend_point_2/node = SubResource("AnimationNodeAnimation_tww3h")
+blend_point_2/pos = Vector2(0, -1)
+blend_point_3/node = SubResource("AnimationNodeAnimation_t5y7g")
+blend_point_3/pos = Vector2(0, 1)
+
+[sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_rlin5"]
+animation = &"walk_up"
+
+[sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_kq3iv"]
+animation = &"walk_down"
+
+[sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_y7e6f"]
+animation = &"walk_left"
+
+[sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_pmdf7"]
+animation = &"walk_right"
+
+[sub_resource type="AnimationNodeBlendSpace2D" id="AnimationNodeBlendSpace2D_f4k7s"]
+blend_point_0/node = SubResource("AnimationNodeAnimation_rlin5")
+blend_point_0/pos = Vector2(0, -1)
+blend_point_1/node = SubResource("AnimationNodeAnimation_kq3iv")
+blend_point_1/pos = Vector2(0, 1)
+blend_point_2/node = SubResource("AnimationNodeAnimation_y7e6f")
+blend_point_2/pos = Vector2(-1, 0)
+blend_point_3/node = SubResource("AnimationNodeAnimation_pmdf7")
+blend_point_3/pos = Vector2(1, 0)
+
+[sub_resource type="AnimationNodeStateMachineTransition" id="AnimationNodeStateMachineTransition_14fai"]
+reset = false
+advance_mode = 2
+
+[sub_resource type="AnimationNodeStateMachineTransition" id="AnimationNodeStateMachineTransition_bplqh"]
+advance_mode = 2
+advance_expression = "_walking"
+
+[sub_resource type="AnimationNodeStateMachineTransition" id="AnimationNodeStateMachineTransition_3lb26"]
+advance_mode = 2
+advance_expression = "!_walking"
+
+[sub_resource type="AnimationNodeStateMachine" id="AnimationNodeStateMachine_k6k7w"]
+states/End/position = Vector2(883, 155)
+states/Idle/node = SubResource("AnimationNodeBlendSpace2D_1djq1")
+states/Idle/position = Vector2(298, 155)
+states/Start/position = Vector2(68, 155)
+states/Walking/node = SubResource("AnimationNodeBlendSpace2D_f4k7s")
+states/Walking/position = Vector2(604, 155)
+transitions = ["Start", "Idle", SubResource("AnimationNodeStateMachineTransition_14fai"), "Idle", "Walking", SubResource("AnimationNodeStateMachineTransition_bplqh"), "Walking", "Idle", SubResource("AnimationNodeStateMachineTransition_3lb26")]
+graph_offset = Vector2(-4, 41)
+
+[sub_resource type="AnimationNodeBlendTree" id="AnimationNodeBlendTree_cysse"]
+graph_offset = Vector2(-416.042, 34.8262)
+nodes/Attacking/node = SubResource("AnimationNodeBlendSpace2D_pdub6")
+nodes/Attacking/position = Vector2(-40, 340)
+nodes/OneShot/node = SubResource("AnimationNodeOneShot_m2yo8")
+nodes/OneShot/position = Vector2(260, 220)
+nodes/States/node = SubResource("AnimationNodeStateMachine_k6k7w")
+nodes/States/position = Vector2(-40, 140)
+nodes/output/position = Vector2(560, 300)
+node_connections = [&"OneShot", 0, &"States", &"OneShot", 1, &"Attacking", &"output", 0, &"OneShot"]
+
+[node name="Paperdoll" type="Node2D"]
+script = ExtResource("1_covj2")
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
 libraries = {
@@ -1065,56 +1221,52 @@ libraries = {
 }
 speed_scale = 1.5
 
-[node name="Camera2D" type="Camera2D" parent="."]
-offset = Vector2(8, 1.45519e-11)
-enabled = false
-zoom = Vector2(3, 3)
+[node name="AnimationTree" type="AnimationTree" parent="."]
+tree_root = SubResource("AnimationNodeBlendTree_cysse")
+advance_expression_base_node = NodePath("..")
+anim_player = NodePath("../AnimationPlayer")
+parameters/Attacking/blend_position = Vector2(1.45519e-11, -1)
+parameters/OneShot/active = false
+parameters/OneShot/internal_active = false
+parameters/OneShot/request = 0
+parameters/States/Idle/blend_position = Vector2(0, 0)
+parameters/States/Walking/blend_position = Vector2(0, 0)
 
-[node name="CenterContainer" type="CenterContainer" parent="."]
-anchors_preset = 5
-anchor_left = 0.5
-anchor_right = 0.5
-offset_left = -64.5
-offset_top = -20.0
-offset_right = 32.5
-offset_bottom = -6.0
-grow_horizontal = 2
-size_flags_horizontal = 0
-size_flags_vertical = 0
-
-[node name="Paperdoll" type="Node2D" parent="."]
+[node name="Layers" type="Node2D" parent="."]
 position = Vector2(8, 2)
 
-[node name="Shadow" type="Sprite2D" parent="Paperdoll"]
-texture = ExtResource("5_2ywir")
+[node name="Shadow" type="Sprite2D" parent="Layers"]
+texture = ExtResource("2_yis6o")
 hframes = 23
 vframes = 4
 frame = 1
 
-[node name="Head" type="Sprite2D" parent="Paperdoll"]
+[node name="Head" type="Sprite2D" parent="Layers"]
 z_index = 5
-texture = ExtResource("2_75nkp")
+texture = ExtResource("3_fqo3i")
 hframes = 23
 vframes = 4
 frame = 1
 
-[node name="Top" type="Sprite2D" parent="Paperdoll"]
+[node name="Top" type="Sprite2D" parent="Layers"]
 z_index = 5
-texture = ExtResource("3_1vvfw")
+texture = ExtResource("4_yf2ye")
 hframes = 23
 vframes = 4
 frame = 1
 
-[node name="Bottom" type="Sprite2D" parent="Paperdoll"]
+[node name="Bottom" type="Sprite2D" parent="Layers"]
 z_index = 5
-texture = ExtResource("4_gjerj")
+texture = ExtResource("5_ve5x7")
 hframes = 23
 vframes = 4
 frame = 1
 
-[node name="Weapon" type="Sprite2D" parent="Paperdoll"]
+[node name="Weapon" type="Sprite2D" parent="Layers"]
 z_index = 5
-texture = ExtResource("6_nldx1")
+texture = ExtResource("6_gkme3")
 hframes = 23
 vframes = 4
 frame = 1
+
+[connection signal="animation_finished" from="AnimationPlayer" to="." method="_on_animation_finished"]

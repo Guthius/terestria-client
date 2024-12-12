@@ -1,6 +1,6 @@
 extends Node2D
 
-const PLAYER = preload("res://entities/player/player.tscn")
+const PLAYER = preload("res://objects/player/player.tscn")
 
 @onready var login: LoginScreen = $CanvasLayer/Screens/Login
 @onready var map_container: Node2D = $Map
