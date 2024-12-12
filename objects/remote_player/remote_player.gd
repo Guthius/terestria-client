@@ -4,6 +4,9 @@ class_name RemotePlayer
 
 @onready var paperdoll: Paperdoll = $Paperdoll
 
+@onready var label_shadow: Label = $Name/Shadow/Label
+@onready var label: Label = $Name/Label
+
 var _moving: bool = false
 var _move_queue: Array[int]
 var _direction: int = Direction.DIR_DOWN
@@ -12,6 +15,8 @@ var character_name: String
 
 func _ready() -> void:
 	paperdoll.set_direction(_direction)
+	label_shadow.text = character_name
+	label.text = character_name
 
 func attack() -> void:
 	paperdoll.set_direction(_direction)
