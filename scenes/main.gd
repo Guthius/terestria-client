@@ -23,10 +23,16 @@ func _ready() -> void:
 	
 func _on_connection_lost() -> void:
 	login.visible = true
+	_reset_game()
+	MessageBox.show_error("The connection with the server has been lost.")
+
+func _reset_game() -> void:
 	if _map != null:
 		_map.queue_free()
 		_map = null
-	MessageBox.show_error("The connection with the server has been lost.")
+	for player in players.get_children():
+		player.queue_free()
+	_player = null
 
 func _handle_login(packet: Packet) -> void:
 	var result = packet.get_u8()
