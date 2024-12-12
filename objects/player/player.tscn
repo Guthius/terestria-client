@@ -10,5 +10,4 @@ script = ExtResource("2_f8h6n")
 
 [node name="Camera" type="Camera2D" parent="."]
 offset = Vector2(8, 1.45519e-11)
-enabled = false
 zoom = Vector2(3, 3)

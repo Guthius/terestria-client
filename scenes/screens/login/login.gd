@@ -40,6 +40,7 @@ func _on_connect_button_pressed() -> void:
 	var character_name = c_character_name.text
 	
 	Network.connect_to_server(server, port)
+	
 	await SignalBus.tcp_connected
 	
 	Protocol.send_login(character_name)

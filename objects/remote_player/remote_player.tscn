@@ -1,0 +1,9 @@
+[gd_scene load_steps=3 format=3 uid="uid://dmnubdh1om51e"]
+
+[ext_resource type="Script" path="res://objects/remote_player/remote_player.gd" id="1_lmfi3"]
+[ext_resource type="PackedScene" uid="uid://bkd7n5vpe00q4" path="res://objects/paperdoll/paperdoll.tscn" id="2_1gxbw"]
+
+[node name="Player" type="Node2D"]
+script = ExtResource("1_lmfi3")
+
+[node name="Paperdoll" parent="." instance=ExtResource("2_1gxbw")]
