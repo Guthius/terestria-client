@@ -1,0 +1,107 @@
+[gd_scene load_steps=4 format=3 uid="uid://88inp2oe4se2"]
+
+[ext_resource type="Script" path="res://scenes/login.gd" id="1_d6n12"]
+[ext_resource type="Theme" uid="uid://h1f8se6daphe" path="res://assets/themes/default_theme.tres" id="1_qnl5d"]
+[ext_resource type="Texture2D" uid="uid://cwn6q67h64g0e" path="res://assets/textures/ui/window_frame.png" id="2_r84d4"]
+
+[node name="Background" type="NinePatchRect"]
+custom_minimum_size = Vector2(250, 160)
+offset_right = 14.0
+offset_bottom = 32.0
+theme = ExtResource("1_qnl5d")
+texture = ExtResource("2_r84d4")
+patch_margin_left = 7
+patch_margin_top = 25
+patch_margin_right = 7
+patch_margin_bottom = 7
+script = ExtResource("1_d6n12")
+
+[node name="VBox" type="VBoxContainer" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+theme_override_constants/separation = 10
+
+[node name="Title" type="MarginContainer" parent="VBox"]
+layout_mode = 2
+theme_override_constants/margin_top = 4
+
+[node name="Label" type="Label" parent="VBox/Title"]
+layout_mode = 2
+theme_type_variation = &"TitleLabel"
+text = "Connect To Server"
+horizontal_alignment = 1
+
+[node name="Margin" type="MarginContainer" parent="VBox"]
+layout_mode = 2
+size_flags_vertical = 3
+theme_override_constants/margin_left = 10
+theme_override_constants/margin_top = 10
+theme_override_constants/margin_right = 10
+theme_override_constants/margin_bottom = 10
+
+[node name="VBox" type="VBoxContainer" parent="VBox/Margin"]
+layout_mode = 2
+theme_override_constants/separation = 10
+
+[node name="Server" type="HBoxContainer" parent="VBox/Margin/VBox"]
+layout_mode = 2
+theme_override_constants/separation = 10
+
+[node name="Label" type="Label" parent="VBox/Margin/VBox/Server"]
+custom_minimum_size = Vector2(60, 1.45519e-11)
+layout_mode = 2
+text = "Server"
+horizontal_alignment = 2
+
+[node name="ServerAddr" type="LineEdit" parent="VBox/Margin/VBox/Server"]
+custom_minimum_size = Vector2(80, 1.45519e-11)
+layout_mode = 2
+size_flags_horizontal = 3
+text = "127.0.0.1"
+
+[node name="Port" type="SpinBox" parent="VBox/Margin/VBox/Server"]
+custom_minimum_size = Vector2(40, 1.45519e-11)
+layout_mode = 2
+min_value = 1.0
+max_value = 65535.0
+value = 7777.0
+rounded = true
+
+[node name="Name" type="HBoxContainer" parent="VBox/Margin/VBox"]
+layout_mode = 2
+theme_override_constants/separation = 10
+
+[node name="Label" type="Label" parent="VBox/Margin/VBox/Name"]
+custom_minimum_size = Vector2(60, 1.45519e-11)
+layout_mode = 2
+text = "Name
+"
+horizontal_alignment = 2
+
+[node name="CharacterName" type="LineEdit" parent="VBox/Margin/VBox/Name"]
+custom_minimum_size = Vector2(140, 1.45519e-11)
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="Margin" type="MarginContainer" parent="VBox/Margin/VBox"]
+layout_mode = 2
+size_flags_vertical = 3
+theme_override_constants/margin_top = 20
+
+[node name="Connect" type="Button" parent="VBox/Margin/VBox/Margin"]
+layout_mode = 2
+size_flags_vertical = 8
+disabled = true
+text = "Connect
+"
+
+[connection signal="text_changed" from="VBox/Margin/VBox/Server/ServerAddr" to="." method="_line_edit_text_changed"]
+[connection signal="text_changed" from="VBox/Margin/VBox/Name/CharacterName" to="." method="_line_edit_text_changed"]
+[connection signal="text_submitted" from="VBox/Margin/VBox/Name/CharacterName" to="." method="_line_edit_text_submitted"]
+[connection signal="pressed" from="VBox/Margin/VBox/Margin/Connect" to="." method="_on_connect_button_pressed"]
