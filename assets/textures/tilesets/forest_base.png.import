@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://dogjpk6xus6tu"
-path="res://.godot/imported/autotile-stone.png-b39e07ba4f523a6e322e035073565c6d.ctex"
+uid="uid://bk4n1jw84gq40"
+path="res://.godot/imported/forest_base.png-955c7dc79196eb0d53250af24afebae3.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/textures/tilesets/autotile-stone.png"
-dest_files=["res://.godot/imported/autotile-stone.png-b39e07ba4f523a6e322e035073565c6d.ctex"]
+source_file="res://assets/textures/tilesets/forest_base.png"
+dest_files=["res://.godot/imported/forest_base.png-955c7dc79196eb0d53250af24afebae3.ctex"]
 
 [params]
 

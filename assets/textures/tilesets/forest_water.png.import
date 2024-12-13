@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://dlru3wv5h502e"
-path="res://.godot/imported/exterior.png-c794189a7a2e02d1ddb398faf3dbf58a.ctex"
+uid="uid://bw7unrssfa3v3"
+path="res://.godot/imported/forest_water.png-9f9530fd8b7a84755aef16bfd8bc5e2a.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/textures/tilesets/exterior.png"
-dest_files=["res://.godot/imported/exterior.png-c794189a7a2e02d1ddb398faf3dbf58a.ctex"]
+source_file="res://assets/textures/tilesets/forest_water.png"
+dest_files=["res://.godot/imported/forest_water.png-9f9530fd8b7a84755aef16bfd8bc5e2a.ctex"]
 
 [params]
 

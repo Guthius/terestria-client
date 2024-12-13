@@ -1384,7 +1384,7 @@ parameters/States/Idle/blend_position = Vector2(0, 0)
 parameters/States/Walking/blend_position = Vector2(0, 0)
 
 [node name="Layers" type="Node2D" parent="."]
-position = Vector2(8, 2)
+position = Vector2(8, 3)
 
 [node name="Shadow" type="Sprite2D" parent="Layers"]
 texture = ExtResource("2_yis6o")

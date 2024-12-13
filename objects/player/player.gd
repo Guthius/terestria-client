@@ -47,14 +47,14 @@ func attack() -> void:
 	paperdoll.set_direction(_direction)
 	paperdoll.attack()
 
-func _within_map_bounds(position: Vector2) -> bool:
+func _within_map_bounds(pos: Vector2) -> bool:
 	if _map == null:
 		return false
 	
-	var left = position.x
-	var top = position.y
-	var right = position.x + Constants.TILE_SIZE
-	var bottom = position.y + Constants.TILE_SIZE
+	var left = pos.x
+	var top = pos.y
+	var right = pos.x + Constants.TILE_SIZE
+	var bottom = pos.y + Constants.TILE_SIZE
 		
 	if left < _map.map_left or top < _map.map_top:
 		return false
@@ -64,8 +64,8 @@ func _within_map_bounds(position: Vector2) -> bool:
 	
 	return true
 
-func _can_move(direction: Vector2, position: Vector2) -> bool:
-	if not _within_map_bounds(position):
+func _can_move(direction: Vector2, pos: Vector2) -> bool:
+	if not _within_map_bounds(pos):
 		return false
 	ray_cast_collision.rotation = direction.angle() - PI / 2
 	ray_cast_collision.force_raycast_update()

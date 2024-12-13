@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://cqvnjmsolyarc"
-path="res://.godot/imported/autotile-dirt.png-be262ef29c8f497cfdf7b66df86c6f82.ctex"
+uid="uid://gs8ihiu4ue7u"
+path="res://.godot/imported/forest_dark_grass.png-f6eb08f546d419bbe4df57996147f832.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/textures/tilesets/autotile-dirt.png"
-dest_files=["res://.godot/imported/autotile-dirt.png-be262ef29c8f497cfdf7b66df86c6f82.ctex"]
+source_file="res://assets/textures/tilesets/forest_dark_grass.png"
+dest_files=["res://.godot/imported/forest_dark_grass.png-f6eb08f546d419bbe4df57996147f832.ctex"]
 
 [params]
 
