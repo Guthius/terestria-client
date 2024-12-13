@@ -1,11 +1,14 @@
-[gd_scene load_steps=42 format=3 uid="uid://bkd7n5vpe00q4"]
+[gd_scene load_steps=45 format=3 uid="uid://bkd7n5vpe00q4"]
 
 [ext_resource type="Script" path="res://objects/paperdoll/paperdoll.gd" id="1_covj2"]
 [ext_resource type="Texture2D" uid="uid://c4hi02dv5qtas" path="res://assets/textures/paperdoll/shadow/shadow.png" id="2_yis6o"]
+[ext_resource type="AudioStream" uid="uid://dt5ej1y3jhy3o" path="res://assets/sounds/steps.wav" id="3_8e7sh"]
 [ext_resource type="Texture2D" uid="uid://cqduhc0y38cw" path="res://assets/textures/paperdoll/head/head1.png" id="3_fqo3i"]
+[ext_resource type="AudioStream" uid="uid://4pt5fnswaml2" path="res://assets/sounds/steps2.wav" id="4_x8efo"]
 [ext_resource type="Texture2D" uid="uid://btfqhxtes0jjm" path="res://assets/textures/paperdoll/top/top0.png" id="4_yf2ye"]
 [ext_resource type="Texture2D" uid="uid://dwclhlx0qy0ag" path="res://assets/textures/paperdoll/bottom/bottom0.png" id="5_ve5x7"]
 [ext_resource type="Texture2D" uid="uid://mlrevabbxna8" path="res://assets/textures/paperdoll/weapon/sword1.png" id="6_gkme3"]
+[ext_resource type="AudioStream" uid="uid://bes0qe8icraqr" path="res://assets/sounds/sword.wav" id="7_jroj2"]
 
 [sub_resource type="Animation" id="Animation_mohlp"]
 length = 0.001
@@ -208,6 +211,21 @@ tracks/6/keys = {
 "method": &"_end_attack"
 }]
 }
+tracks/7/type = "audio"
+tracks/7/imported = false
+tracks/7/enabled = true
+tracks/7/path = NodePath("Sounds/Weapon")
+tracks/7/interp = 1
+tracks/7/loop_wrap = true
+tracks/7/keys = {
+"clips": [{
+"end_offset": 0.0,
+"start_offset": 0.0,
+"stream": ExtResource("7_jroj2")
+}],
+"times": PackedFloat32Array(0.1)
+}
+tracks/7/use_blend = true
 
 [sub_resource type="Animation" id="Animation_arm0w"]
 resource_name = "attack_left"
@@ -299,6 +317,21 @@ tracks/6/keys = {
 "method": &"_end_attack"
 }]
 }
+tracks/7/type = "audio"
+tracks/7/imported = false
+tracks/7/enabled = true
+tracks/7/path = NodePath("Sounds/Weapon")
+tracks/7/interp = 1
+tracks/7/loop_wrap = true
+tracks/7/keys = {
+"clips": [{
+"end_offset": 0.0,
+"start_offset": 0.0,
+"stream": ExtResource("7_jroj2")
+}],
+"times": PackedFloat32Array(0.1)
+}
+tracks/7/use_blend = true
 
 [sub_resource type="Animation" id="Animation_l7wu8"]
 resource_name = "attack_right"
@@ -390,6 +423,21 @@ tracks/6/keys = {
 "method": &"_end_attack"
 }]
 }
+tracks/7/type = "audio"
+tracks/7/imported = false
+tracks/7/enabled = true
+tracks/7/path = NodePath("Sounds/Weapon")
+tracks/7/interp = 1
+tracks/7/loop_wrap = true
+tracks/7/keys = {
+"clips": [{
+"end_offset": 0.0,
+"start_offset": 0.0,
+"stream": ExtResource("7_jroj2")
+}],
+"times": PackedFloat32Array(0.1)
+}
+tracks/7/use_blend = true
 
 [sub_resource type="Animation" id="Animation_y7dfa"]
 resource_name = "attack_up"
@@ -481,6 +529,21 @@ tracks/6/keys = {
 "method": &"_end_attack"
 }]
 }
+tracks/7/type = "audio"
+tracks/7/imported = false
+tracks/7/enabled = true
+tracks/7/path = NodePath("Sounds/Weapon")
+tracks/7/interp = 1
+tracks/7/loop_wrap = true
+tracks/7/keys = {
+"clips": [{
+"end_offset": 0.0,
+"start_offset": 0.0,
+"stream": ExtResource("7_jroj2")
+}],
+"times": PackedFloat32Array(0.1)
+}
+tracks/7/use_blend = true
 
 [sub_resource type="Animation" id="Animation_fnp7p"]
 resource_name = "idle_down"
@@ -859,6 +922,29 @@ tracks/5/keys = {
 "update": 1,
 "values": [0, 1, 2, 1, 2]
 }
+tracks/6/type = "audio"
+tracks/6/imported = false
+tracks/6/enabled = true
+tracks/6/path = NodePath("Sounds/Feet")
+tracks/6/interp = 1
+tracks/6/loop_wrap = true
+tracks/6/keys = {
+"clips": [{
+"end_offset": 0.0,
+"start_offset": 0.0,
+"stream": ExtResource("3_8e7sh")
+}, {
+"end_offset": 0.0,
+"start_offset": 0.0,
+"stream": ExtResource("4_x8efo")
+}, {
+"end_offset": 0.0,
+"start_offset": 0.0,
+"stream": ExtResource("3_8e7sh")
+}],
+"times": PackedFloat32Array(0, 0.5, 1)
+}
+tracks/6/use_blend = true
 
 [sub_resource type="Animation" id="Animation_qrvcv"]
 resource_name = "walk_left"
@@ -936,6 +1022,29 @@ tracks/5/keys = {
 "update": 1,
 "values": [5]
 }
+tracks/6/type = "audio"
+tracks/6/imported = false
+tracks/6/enabled = true
+tracks/6/path = NodePath("Sounds/Feet")
+tracks/6/interp = 1
+tracks/6/loop_wrap = true
+tracks/6/keys = {
+"clips": [{
+"end_offset": 0.0,
+"start_offset": 0.0,
+"stream": ExtResource("3_8e7sh")
+}, {
+"end_offset": 0.0,
+"start_offset": 0.0,
+"stream": ExtResource("4_x8efo")
+}, {
+"end_offset": 0.0,
+"start_offset": 0.0,
+"stream": ExtResource("3_8e7sh")
+}],
+"times": PackedFloat32Array(0, 0.5, 1)
+}
+tracks/6/use_blend = true
 
 [sub_resource type="Animation" id="Animation_kng7c"]
 resource_name = "walk_right"
@@ -1013,6 +1122,29 @@ tracks/5/keys = {
 "update": 1,
 "values": [5]
 }
+tracks/6/type = "audio"
+tracks/6/imported = false
+tracks/6/enabled = true
+tracks/6/path = NodePath("Sounds/Feet")
+tracks/6/interp = 1
+tracks/6/loop_wrap = true
+tracks/6/keys = {
+"clips": [{
+"end_offset": 0.0,
+"start_offset": 0.0,
+"stream": ExtResource("3_8e7sh")
+}, {
+"end_offset": 0.0,
+"start_offset": 0.0,
+"stream": ExtResource("4_x8efo")
+}, {
+"end_offset": 0.0,
+"start_offset": 0.0,
+"stream": ExtResource("3_8e7sh")
+}],
+"times": PackedFloat32Array(0, 0.5, 1)
+}
+tracks/6/use_blend = true
 
 [sub_resource type="Animation" id="Animation_whnju"]
 resource_name = "walk_up"
@@ -1090,6 +1222,29 @@ tracks/5/keys = {
 "update": 1,
 "values": [4]
 }
+tracks/6/type = "audio"
+tracks/6/imported = false
+tracks/6/enabled = true
+tracks/6/path = NodePath("Sounds/Feet")
+tracks/6/interp = 1
+tracks/6/loop_wrap = true
+tracks/6/keys = {
+"clips": [{
+"end_offset": 0.0,
+"start_offset": 0.0,
+"stream": ExtResource("3_8e7sh")
+}, {
+"end_offset": 0.0,
+"start_offset": 0.0,
+"stream": ExtResource("4_x8efo")
+}, {
+"end_offset": 0.0,
+"start_offset": 0.0,
+"stream": ExtResource("3_8e7sh")
+}],
+"times": PackedFloat32Array(0, 0.5, 1)
+}
+tracks/6/use_blend = true
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_ortnd"]
 _data = {
@@ -1199,7 +1354,6 @@ transitions = ["Start", "Idle", SubResource("AnimationNodeStateMachineTransition
 graph_offset = Vector2(-4, 41)
 
 [sub_resource type="AnimationNodeBlendTree" id="AnimationNodeBlendTree_cysse"]
-graph_offset = Vector2(-416.042, 34.8262)
 nodes/Attacking/node = SubResource("AnimationNodeBlendSpace2D_pdub6")
 nodes/Attacking/position = Vector2(-40, 340)
 nodes/OneShot/node = SubResource("AnimationNodeOneShot_m2yo8")
@@ -1265,5 +1419,16 @@ texture = ExtResource("6_gkme3")
 hframes = 23
 vframes = 4
 frame = 1
+
+[node name="Sounds" type="Node2D" parent="."]
+
+[node name="Weapon" type="AudioStreamPlayer2D" parent="Sounds"]
+position = Vector2(8, 0)
+
+[node name="Feet" type="AudioStreamPlayer2D" parent="Sounds"]
+pitch_scale = 0.8
+attenuation = 22.6274
+max_polyphony = 4
+panning_strength = 0.28
 
 [connection signal="animation_finished" from="AnimationPlayer" to="." method="_on_animation_finished"]
