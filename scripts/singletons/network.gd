@@ -2,6 +2,7 @@ extends Node
 
 const MAX_TRIES: int = 5
 const RETRY_DELAY: float = .5
+const CONNECT_DELAY: float = 1
 
 var _status: int = 0
 var _stream: StreamPeerTCP
@@ -26,6 +27,7 @@ func connect_to_server(host: String, port: int) -> bool:
 		match _status:
 			StreamPeerTCP.STATUS_CONNECTED:
 				_stream = stream
+				await get_tree().create_timer(CONNECT_DELAY).timeout
 				SignalBus.tcp_connected.emit()
 				print("Connected to server")
 				return true
@@ -47,7 +49,6 @@ func _receive_data() -> void:
 		return
 	
 	_buffer.append_array(data[1])
-	print("Received %d bytes from server" % [len(data[1])])
 	while len(_buffer) >= 2:
 		var packet_end = _buffer.decode_u16(0) + 2
 		if len(_buffer) >= packet_end:
@@ -88,9 +89,6 @@ func register_handler(packet_id: int, handler: Callable) -> void:
 	handlers[packet_id] = handler
 	
 func send(packet: Packet) -> void:
-	print("Sending %s bytes to server" % [len(packet.data_array) + 2])
 	if _status == _stream.STATUS_CONNECTED:
 		_stream.put_16(packet.get_size())
 		_stream.put_data(packet.data_array)
-	else:
-		print("Unable to send (not connected)")
