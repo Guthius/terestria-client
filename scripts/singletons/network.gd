@@ -2,7 +2,7 @@ extends Node
 
 const MAX_TRIES: int = 5
 const RETRY_DELAY: float = .5
-const CONNECT_DELAY: float = 1
+const CONNECT_DELAY: float = .2
 
 var _status: int = 0
 var _stream: StreamPeerTCP

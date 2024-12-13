@@ -38,3 +38,5 @@ func _compute_bounds_and_hide_meta_layer(children: Array[Node]) -> void:
 
 func _ready():
 	_compute_bounds_and_hide_meta_layer(get_children())
+	map_right = map_right * Constants.TILE_SIZE
+	map_bottom = map_bottom * Constants.TILE_SIZE

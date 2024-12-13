@@ -4,6 +4,7 @@ class_name Player
 
 @onready var paperdoll: Paperdoll = $Paperdoll
 @onready var camera: Camera2D = $Camera
+@onready var ray_cast_collision: RayCast2D = $RayCastCollision
 
 var _allow_input: bool = true
 var _direction: int = Direction.DIR_DOWN
@@ -45,11 +46,28 @@ func attack() -> void:
 	
 	paperdoll.set_direction(_direction)
 	paperdoll.attack()
-	
-@onready var ray_cast_collision: RayCast2D = $RayCastCollision
 
-func _can_move(target: Vector2) -> bool:
-	ray_cast_collision.rotation = target.angle() - PI / 2
+func _within_map_bounds(position: Vector2) -> bool:
+	if _map == null:
+		return false
+	
+	var left = position.x
+	var top = position.y
+	var right = position.x + Constants.TILE_SIZE
+	var bottom = position.y + Constants.TILE_SIZE
+		
+	if left < _map.map_left or top < _map.map_top:
+		return false
+	
+	if right > _map.map_right or bottom > _map.map_bottom:
+		return false
+	
+	return true
+
+func _can_move(direction: Vector2, position: Vector2) -> bool:
+	if not _within_map_bounds(position):
+		return false
+	ray_cast_collision.rotation = direction.angle() - PI / 2
 	ray_cast_collision.force_raycast_update()
 	return !ray_cast_collision.is_colliding()
 
@@ -63,13 +81,12 @@ func move(direction: int) -> void:
 	if target == Vector2.ZERO:
 		return
 	
-	if not _can_move(target):
+	var target_position = position + target * Constants.TILE_SIZE
+	if not _can_move(target, target_position):
 		paperdoll.set_direction(direction)
 		return
-		
-	_allow_input = false
 	
-	var target_position = position + target * Constants.TILE_SIZE
+	_allow_input = false
 	
 	paperdoll.set_direction(_direction)
 	paperdoll.start_walking()
@@ -88,8 +105,8 @@ func _apply_map_config() -> void:
 	if _map.constrain_camera:
 		camera.limit_left = _map.map_left
 		camera.limit_top = _map.map_top
-		camera.limit_right = _map.map_right * 16
-		camera.limit_bottom = _map.map_bottom * 16
+		camera.limit_right = _map.map_right
+		camera.limit_bottom = _map.map_bottom
 	else:
 		camera.limit_left = -10000000
 		camera.limit_top = -10000000
