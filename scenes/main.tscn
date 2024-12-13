@@ -26,6 +26,11 @@ follow_viewport_enabled = true
 
 [node name="Screens" type="CanvasLayer" parent="."]
 layer = 3
+scale = Vector2(2, 2)
+transform = Transform2D(2, 0, 0, 2, 0, 0)
 
 [node name="Login" parent="Screens" instance=ExtResource("2_2b8km")]
+anchors_preset = -1
+anchor_right = 0.5
+anchor_bottom = 0.5
 size_flags_vertical = 4

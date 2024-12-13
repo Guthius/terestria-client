@@ -89,6 +89,8 @@ func _load_map(map_name):
 		return
 	_map = _map_scene.instantiate()
 	map_container.add_child(_map)
+	if _player is Player and _map is Map:
+		_player.set_map(_map)
 
 func _create_remote_player(id: int, character_name: String, x: int, y: int):
 	var remote_player = REMOTE_PLAYER.instantiate()
@@ -103,3 +105,5 @@ func _create_player(id: int, character_name: String, x: int, y: int):
 	_player.position = Vector2(x * Constants.TILE_SIZE, y * Constants.TILE_SIZE)
 	_player.character_name = character_name
 	players.add_child(_player)
+	if _map is Map:
+		_player.set_map(_map)

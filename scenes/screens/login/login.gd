@@ -2,13 +2,13 @@ extends TextureRect
 
 class_name LoginScreen
 
-@onready var animation_player: AnimationPlayer = $Dialog/Loading/AnimationPlayer
+@onready var animation_player: AnimationPlayer = $Center/Dialog/Loading/AnimationPlayer
 
-@onready var c_server_addr: LineEdit = $Dialog/VBox/Margin/VBox/Server/ServerAddr
-@onready var c_port: SpinBox = $Dialog/VBox/Margin/VBox/Server/Port
-@onready var c_character_name: LineEdit = $Dialog/VBox/Margin/VBox/Name/CharacterName
-@onready var c_connect: Button = $Dialog/VBox/Margin/VBox/Margin/Connect
-@onready var c_loading: ColorRect = $Dialog/Loading
+@onready var c_server_addr: LineEdit = $Center/Dialog/VBox/Margin/VBox/Server/ServerAddr
+@onready var c_port: SpinBox = $Center/Dialog/VBox/Margin/VBox/Server/Port
+@onready var c_character_name: LineEdit = $Center/Dialog/VBox/Margin/VBox/Name/CharacterName
+@onready var c_connect: Button = $Center/Dialog/VBox/Margin/VBox/Margin/Connect
+@onready var c_loading: ColorRect = $Center/Dialog/Loading
 
 func _is_valid_server_addr() -> bool:
 	var server = c_server_addr.text
