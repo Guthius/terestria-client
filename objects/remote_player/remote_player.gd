@@ -9,25 +9,28 @@ class_name RemotePlayer
 
 var _moving: bool = false
 var _move_queue: Array[int]
-var _direction: int = Direction.DIR_DOWN
 
+var direction: int = Direction.DIR_DOWN
 var character_name: String
 
 func _ready() -> void:
-	paperdoll.set_direction(_direction)
+	paperdoll.set_direction(direction)
 	label_shadow.text = character_name
 	label.text = character_name
 
 func attack() -> void:
-	paperdoll.set_direction(_direction)
+	paperdoll.set_direction(direction)
 	paperdoll.attack()
 
-func move(direction: int) -> void:
+func set_direction(dir: int) -> void:
+	pass
+
+func move(dir: int) -> void:
 	if _moving:
-		_move_queue.push_back(direction)
+		_move_queue.push_back(dir)
 		return
 	
-	_direction = direction
+	direction = dir
 	
 	var target = Direction.get_vector(direction)
 	if target == Vector2.ZERO:
@@ -37,7 +40,7 @@ func move(direction: int) -> void:
 	
 	_moving = true
 	
-	paperdoll.set_direction(_direction)
+	paperdoll.set_direction(direction)
 	paperdoll.start_walking()
 	
 	var tween = create_tween()

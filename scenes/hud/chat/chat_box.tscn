@@ -1,0 +1,21 @@
+[gd_scene load_steps=2 format=3 uid="uid://bs7f2o3ywuehd"]
+
+[ext_resource type="Script" path="res://scenes/hud/chat/chat_box.gd" id="1_k2xa2"]
+
+[node name="ChatMargin" type="MarginContainer"]
+anchors_preset = -1
+anchor_right = 0.5
+anchor_bottom = 0.5
+theme_override_constants/margin_left = 5
+theme_override_constants/margin_top = 5
+theme_override_constants/margin_right = 5
+theme_override_constants/margin_bottom = 5
+script = ExtResource("1_k2xa2")
+metadata/_edit_use_anchors_ = true
+metadata/_edit_lock_ = true
+
+[node name="ChatContainer" type="VBoxContainer" parent="."]
+layout_mode = 2
+size_flags_vertical = 8
+theme_override_constants/separation = 3
+alignment = 2

@@ -1,0 +1,8 @@
+[gd_scene load_steps=2 format=3 uid="uid://gb8jc06dlu40"]
+
+[ext_resource type="Script" path="res://scenes/hud/chat/chat_box_line.gd" id="1_sxdhv"]
+
+[node name="Label" type="Label"]
+text = "Player: Welcome to Terestria 23423 4
+"
+script = ExtResource("1_sxdhv")

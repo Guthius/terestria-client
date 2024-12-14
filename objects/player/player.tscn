@@ -8,7 +8,7 @@ script = ExtResource("2_f8h6n")
 
 [node name="Camera" type="Camera2D" parent="."]
 position = Vector2(8, 0)
-zoom = Vector2(3, 3)
+zoom = Vector2(2, 2)
 
 [node name="Paperdoll" parent="." instance=ExtResource("2_hmhlh")]
 
@@ -19,3 +19,29 @@ target_position = Vector2(0, 16)
 [node name="AudioListener2D" type="AudioListener2D" parent="."]
 position = Vector2(8, 0)
 current = true
+
+[node name="Hud" type="CanvasLayer" parent="."]
+layer = 5
+scale = Vector2(2, 2)
+transform = Transform2D(2, 0, 0, 2, 0, 0)
+
+[node name="ChatMargin" type="MarginContainer" parent="Hud"]
+anchors_preset = -1
+anchor_left = 0.479
+anchor_right = 0.523
+anchor_bottom = 0.049
+offset_left = -455.808
+offset_top = 286.0
+offset_right = -122.496
+offset_bottom = 288.248
+grow_horizontal = 2
+theme_override_constants/margin_left = 5
+theme_override_constants/margin_top = 5
+theme_override_constants/margin_right = 5
+theme_override_constants/margin_bottom = 5
+
+[node name="Chat" type="LineEdit" parent="Hud/ChatMargin"]
+visible = false
+layout_mode = 2
+
+[connection signal="focus_exited" from="Hud/ChatMargin/Chat" to="." method="_on_chat_focus_exited"]

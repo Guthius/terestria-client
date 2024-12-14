@@ -80,7 +80,6 @@ func _process(_delta) -> void:
 
 func _handle_data(packet: Packet) -> void:
 	var packet_id = packet.get_u16()
-	print("Received packet %d from server" % [packet_id])
 	var packet_handler = handlers.get(packet_id)
 	if packet_handler is Callable:
 		packet_handler.call(packet)

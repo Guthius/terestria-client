@@ -1,7 +1,8 @@
-[gd_scene load_steps=3 format=3 uid="uid://bv8uc0jbjdd2a"]
+[gd_scene load_steps=4 format=3 uid="uid://bv8uc0jbjdd2a"]
 
 [ext_resource type="Script" path="res://scenes/main.gd" id="1_cqj3t"]
 [ext_resource type="PackedScene" uid="uid://88inp2oe4se2" path="res://scenes/screens/login/login.tscn" id="2_2b8km"]
+[ext_resource type="PackedScene" uid="uid://bs7f2o3ywuehd" path="res://scenes/hud/chat/chat_box.tscn" id="2_sy33g"]
 
 [node name="Main" type="Node2D"]
 script = ExtResource("1_cqj3t")
@@ -24,8 +25,15 @@ follow_viewport_enabled = true
 
 [node name="Players" type="Node2D" parent="World"]
 
+[node name="Hud" type="CanvasLayer" parent="World"]
+layer = 4
+scale = Vector2(2, 2)
+transform = Transform2D(2, 0, 0, 2, 0, 0)
+
+[node name="ChatBox" parent="World/Hud" instance=ExtResource("2_sy33g")]
+
 [node name="Screens" type="CanvasLayer" parent="."]
-layer = 3
+layer = 10
 scale = Vector2(2, 2)
 transform = Transform2D(2, 0, 0, 2, 0, 0)
 

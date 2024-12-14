@@ -14,8 +14,6 @@ func _update_bounds(layer: TileMapLayer) -> void:
 		layer.visible = false
 	
 	var rect = layer.get_used_rect()
-	print(rect)
-	
 	var pos = rect.position
 	var size = rect.size
 	
@@ -42,6 +40,5 @@ func _compute_bounds_and_hide_meta_layer(children: Array[Node]) -> void:
 
 func _ready():
 	_compute_bounds_and_hide_meta_layer(get_children())
-	print("%d,%d,%d,%d" % [map_left, map_top, map_right, map_bottom])
 	map_right = map_right * Constants.TILE_SIZE
 	map_bottom = map_bottom * Constants.TILE_SIZE
