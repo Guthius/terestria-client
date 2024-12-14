@@ -15,3 +15,5 @@ The client is built using the [Godot Engine](https://godotengine.org/).
 ## License
 
 This project is licensed under the MIT License. For the complete license text, please refer to the [LICENSE](LICENSE) file.
+
+**Note:** Included tlesets by [REFMAP](https://refmap-l.blog.jp/) are not covered under the MIT License. They are subject to their own separate terms of use, as specified on their [blog](https://refmap-l.blog.jp/archives/cat_202341.html).
